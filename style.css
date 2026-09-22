@@ -209,22 +209,15 @@ button:hover {
     }
 
 }
-body::before {
-    content: "";
-    position: fixed;
-    width: 350px;
-    height: 350px;
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #071510, #0d2b22);
+    color: white;
+    font-family: Arial, sans-serif;
 
-    background: rgba(40, 180, 130, 0.15);
-    filter: blur(100px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    border-radius: 50%;
-
-    top: 10%;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    pointer-events: none;
-    z-index: -1;
+    overflow: hidden;
 }
