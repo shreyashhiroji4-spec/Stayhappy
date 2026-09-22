@@ -162,3 +162,10 @@ button:hover {
     .colon {
         font-size: 25px;
     }
+.intro-text {
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    opacity: 0.85;
+    margin-bottom: 20px;
+}
