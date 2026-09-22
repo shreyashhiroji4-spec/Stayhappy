@@ -58,10 +58,12 @@ startButton.addEventListener("click", function () {
     audioContext.resume();
 
     // Hide intro
-    intro.classList.add("hidden");
+    // Keep the intro visible
+// Show countdown below it
+countdownSection.classList.remove("hidden");
 
-    // Show countdown
-    countdownSection.classList.remove("hidden");
+// Hide only the button
+startButton.classList.add("hidden");
 
     // Start countdown
     updateCountdown();
