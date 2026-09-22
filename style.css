@@ -172,7 +172,7 @@ button:hover {
 @media (max-width: 600px) {
 
     #intro {
-        transform: translateY(-120px);
+        transform: translateY(-100px);
     }
 
     .intro-text {
