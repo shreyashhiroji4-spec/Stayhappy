@@ -169,14 +169,19 @@ button:hover {
 /* =========================
    MOBILE
    ========================= */
-
 @media (max-width: 600px) {
 
-    .intro-text {
-        font-size: 24px;
-        letter-spacing: 1px;
-        margin-bottom: 18px;
+    #intro {
+        transform: translateY(-100px);
     }
+
+    .intro-text {
+        font-size: 23px;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+    }
+
+}
 
     #countdown {
         gap: 5px;
