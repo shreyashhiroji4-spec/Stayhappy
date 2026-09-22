@@ -1,1 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    min-height: 100vh;
+    background: radial-gradient(circle at center, #183c32, #071510 70%);
+    color: white;
+    font-family: Arial, sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    text-align: center;
+}
+
+.small-text {
+    font-size: 18px;
+    letter-spacing: 2px;
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: clamp(35px, 7vw, 70px);
+    margin-bottom: 15px;
+}
+
+.date {
+    font-size: 22px;
+    letter-spacing: 3px;
+    opacity: 0.8;
+    margin-bottom: 45px;
+}
+
+.message {
+    font-size: 20px;
+    opacity: 0.8;
+    margin-bottom: 35px;
+}
+
+#countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.time-box {
+    min-width: 120px;
+    padding: 20px 15px;
+
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+
+    backdrop-filter: blur(10px);
+}
+
+.time-box span {
+    display: block;
+    font-size: clamp(35px, 6vw, 60px);
+    font-weight: bold;
+}
+
+.time-box small {
+    display: block;
+    margin-top: 8px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    opacity: 0.7;
+}
+
+.colon {
+    font-size: 45px;
+    font-weight: bold;
+    opacity: 0.7;
+}
+
+.bottom-text {
+    margin-top: 45px;
+    font-size: 15px;
+    opacity: 0.5;
+}
+
+button {
+    border: none;
+    padding: 15px 30px;
+
+    border-radius: 30px;
+
+    background: #ffffff;
+    color: #12352b;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.hidden {
+    display: none;
+}
+
+#birthdayMessage h1 {
+    animation: appear 2s ease;
+}
+
+#birthdayMessage p {
+    font-size: 22px;
+    opacity: 0.8;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    #countdown {
+        gap: 5px;
+    }
+
+    .time-box {
+        min-width: 65px;
+        padding: 12px 5px;
+    }
+
+    .time-box span {
+        font-size: 28px;
+    }
+
+    .time-box small {
+        font-size: 9px;
+    }
+
+    .colon {
+        font-size: 25px;
+    }
+}
