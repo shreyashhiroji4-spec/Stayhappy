@@ -29,7 +29,7 @@ function playTick() {
     oscillator.type = "sine";
     oscillator.frequency.setValueAtTime(900, audioContext.currentTime);
 
-    gain.gain.setValueAtTime(0.08, audioContext.currentTime);
+    gain.gain.setValueAtTime(0.15, audioContext.currentTime);
     gain.gain.exponentialRampToValueAtTime(
         0.001,
         audioContext.currentTime + 0.08
