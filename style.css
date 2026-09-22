@@ -212,15 +212,19 @@ button:hover {
 body::before {
     content: "";
     position: fixed;
-    inset: 0;
+    width: 350px;
+    height: 350px;
 
-    background-image:
-        radial-gradient(circle, rgba(255,255,255,0.35) 1px, transparent 1px),
-        radial-gradient(circle, rgba(100,255,200,0.18) 1px, transparent 1px);
+    background: rgba(40, 180, 130, 0.15);
+    filter: blur(100px);
 
-    background-size: 90px 90px, 140px 140px;
-    background-position: 10px 20px, 50px 70px;
+    border-radius: 50%;
+
+    top: 10%;
+    left: 50%;
+
+    transform: translateX(-50%);
 
     pointer-events: none;
-    opacity: 0.35;
+    z-index: -1;
 }
