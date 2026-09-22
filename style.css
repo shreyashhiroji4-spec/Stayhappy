@@ -163,10 +163,10 @@ button:hover {
         font-size: 25px;
     }
 }
-#intro .small-text,
-#intro h1,
-#intro .date {
-    font-size: 24px;
+/* Same text size on the opening page */
+#intro p,
+#intro h1 {
+    font-size: 24px !important;
     margin-bottom: 20px;
 }
 
