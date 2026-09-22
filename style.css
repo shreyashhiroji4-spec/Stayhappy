@@ -15,7 +15,15 @@ body {
     align-items: center;
 
     overflow: hidden;
-    }
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    text-align: center;
+}
+
+
 /* =========================
    OPENING PAGE
    ========================= */
@@ -59,10 +67,10 @@ button:hover {
    COUNTDOWN
    ========================= */
 
-.message {
-    font-size: 20px;
-    opacity: 0.8;
-    margin-bottom: 35px;
+.countdown-title {
+    font-size: 24px;
+    opacity: 0.9;
+    margin-bottom: 40px;
 }
 
 #countdown {
@@ -161,6 +169,7 @@ button:hover {
 /* =========================
    MOBILE
    ========================= */
+
 @media (max-width: 600px) {
 
     #intro {
@@ -172,6 +181,7 @@ button:hover {
         letter-spacing: 1px;
         margin-bottom: 20px;
     }
+
     #countdown {
         gap: 5px;
     }
@@ -192,4 +202,10 @@ button:hover {
     .colon {
         font-size: 25px;
     }
-    
+
+    .countdown-title {
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+
+}
