@@ -163,9 +163,6 @@ button:hover {
         letter-spacing: 1px;
         margin-bottom: 20px;
     }
-
-}
-
     #countdown {
         gap: 5px;
     }
@@ -186,9 +183,7 @@ button:hover {
     .colon {
         font-size: 25px;
     }
-
-}
-body {
+    body {
     min-height: 100vh;
     background: linear-gradient(135deg, #071510, #0d2b22);
     color: white;
@@ -199,4 +194,4 @@ body {
     align-items: center;
 
     overflow: hidden;
-}
+    }
