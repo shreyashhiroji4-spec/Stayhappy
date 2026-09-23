@@ -209,6 +209,7 @@ function finishCountdown() {
     "<div>Happy Birthday Brinda...!!!🥳💚</div>" +
     "<div>password is 0826</div>" +
     "<div>I hope you will enjoy...💚</div>";
+        
         specialDayText.style.fontSize = "22px";
         specialDayText.style.opacity = "0.85";
         specialDayText.style.lineHeight = "1.6";
