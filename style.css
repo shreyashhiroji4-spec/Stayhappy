@@ -172,6 +172,11 @@ button:hover {
 
 @media (max-width: 600px) {
 
+    .container {
+        position: relative;
+        top: -60px;
+    }
+
     #intro {
         transform: translateY(-100px);
     }
@@ -207,9 +212,12 @@ button:hover {
         font-size: 20px;
         margin-bottom: 30px;
     }
-
 }
-/* PASSWORD */
+
+
+/* =========================
+   PASSWORD
+   ========================= */
 
 .password-section {
     margin-top: 25px;
@@ -236,6 +244,8 @@ button:hover {
     font-size: 14px;
     opacity: 0.8;
 }
+
+
 #specialDayText {
     margin-top: 45px;
     margin-bottom: 35px;
@@ -243,11 +253,4 @@ button:hover {
     line-height: 1.6;
     opacity: 0.85;
     font-weight: 500;
-}
-/* Move everything slightly upward on phones */
-@media (max-width: 600px) {
-    .container {
-        position: relative;
-        top: -60px;
-    }
 }
