@@ -61,7 +61,9 @@ button {
 button:hover {
     transform: scale(1.05);
 }
-
+#backButton {
+    transform: translateY(-15px);
+}
 
 /* =========================
    COUNTDOWN
