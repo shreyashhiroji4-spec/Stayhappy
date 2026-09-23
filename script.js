@@ -96,89 +96,101 @@ if (
     setInterval(updateCountdown, 1000);
 
 
-    // ======================================
-    // TICKING SOUND
-    // ======================================
+  // ======================================
+// TICKING SOUND
+// ======================================
 
-    let audioContext = null;
+let audioContext = null;
+let tickTimer = null;
 
 
-    function startAudio() {
+function startAudio() {
 
-        if (!audioContext) {
+    if (!audioContext) {
 
-            audioContext = new (
-                window.AudioContext ||
-                window.webkitAudioContext
-            )();
+        audioContext = new (
+            window.AudioContext ||
+            window.webkitAudioContext
+        )();
 
-        }
-
-        if (audioContext.state === "suspended") {
-            audioContext.resume();
-        }
     }
 
-
-    function playTick() {
-
-        if (!audioContext) return;
-
-        const oscillator =
-            audioContext.createOscillator();
-
-        const gain =
-            audioContext.createGain();
-
-
-        oscillator.type = "sine";
-
-        oscillator.frequency.setValueAtTime(
-            900,
-            audioContext.currentTime
-        );
-
-
-        gain.gain.setValueAtTime(
-            0.12,
-            audioContext.currentTime
-        );
-
-        gain.gain.exponentialRampToValueAtTime(
-            0.001,
-            audioContext.currentTime + 0.08
-        );
-
-
-        oscillator.connect(gain);
-
-        gain.connect(audioContext.destination);
-
-
-        oscillator.start();
-
-        oscillator.stop(
-            audioContext.currentTime + 0.08
-        );
+    if (audioContext.state === "suspended") {
+        audioContext.resume();
     }
+}
 
 
-    // First click activates sound
-    document.addEventListener(
-        "click",
-        function () {
+// ======================================
+// PLAY TICK
+// ======================================
 
-            startAudio();
-            playTick();
+function playTick() {
 
-            // Tick every second
-            setInterval(playTick, 1000);
+    if (!audioContext) return;
 
-        },
-        { once: true }
+    const oscillator =
+        audioContext.createOscillator();
+
+    const gain =
+        audioContext.createGain();
+
+
+    oscillator.type = "sine";
+
+    oscillator.frequency.setValueAtTime(
+        900,
+        audioContext.currentTime
     );
 
+
+    gain.gain.setValueAtTime(
+        0.12,
+        audioContext.currentTime
+    );
+
+    gain.gain.exponentialRampToValueAtTime(
+        0.001,
+        audioContext.currentTime + 0.08
+    );
+
+
+    oscillator.connect(gain);
+
+    gain.connect(
+        audioContext.destination
+    );
+
+
+    oscillator.start();
+
+    oscillator.stop(
+        audioContext.currentTime + 0.08
+    );
 }
+
+
+// ======================================
+// FIRST CLICK ACTIVATES SOUND
+// ======================================
+
+document.addEventListener(
+    "click",
+    function () {
+
+        startAudio();
+
+        playTick();
+
+        // Tick every second
+        tickTimer = setInterval(
+            playTick,
+            1000
+        );
+
+    },
+    { once: true }
+);
 // ==========================================
 // PASSWORD
 // ==========================================
