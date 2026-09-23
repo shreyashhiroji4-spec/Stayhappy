@@ -1,23 +1,54 @@
-// Birthday date: 8 October 2026, 12:00 AM IST
+// ==========================================
+// BIRTHDAY COUNTDOWN
+// 8 October 2026 - 12:00 AM IST
+// ==========================================
+
 const birthday = new Date("2026-10-08T00:00:00+05:30").getTime();
-
-const startButton = document.getElementById("startButton");
-
-const intro = document.getElementById("intro");
-const countdownSection = document.getElementById("countdownSection");
-const birthdayMessage = document.getElementById("birthdayMessage");
 
 const daysElement = document.getElementById("days");
 const hoursElement = document.getElementById("hours");
 const minutesElement = document.getElementById("minutes");
 const secondsElement = document.getElementById("seconds");
 
+const backButton = document.getElementById("backButton");
 
-// -------------------------
-// Tick sound
-// -------------------------
 
-let audioContext;
+// ==========================================
+// BACK BUTTON
+// ==========================================
+
+if (backButton) {
+
+    backButton.addEventListener("click", function () {
+        window.location.href = "index.html";
+    });
+
+}
+
+
+// ==========================================
+// TICK SOUND
+// ==========================================
+
+let audioContext = null;
+
+function startAudio() {
+
+    if (!audioContext) {
+
+        audioContext = new (
+            window.AudioContext ||
+            window.webkitAudioContext
+        )();
+
+    }
+
+    if (audioContext.state === "suspended") {
+        audioContext.resume();
+    }
+
+}
+
 
 function playTick() {
 
@@ -27,9 +58,17 @@ function playTick() {
     const gain = audioContext.createGain();
 
     oscillator.type = "sine";
-    oscillator.frequency.setValueAtTime(900, audioContext.currentTime);
 
-    gain.gain.setValueAtTime(0.15, audioContext.currentTime);
+    oscillator.frequency.setValueAtTime(
+        900,
+        audioContext.currentTime
+    );
+
+    gain.gain.setValueAtTime(
+        0.15,
+        audioContext.currentTime
+    );
+
     gain.gain.exponentialRampToValueAtTime(
         0.001,
         audioContext.currentTime + 0.08
@@ -39,40 +78,17 @@ function playTick() {
     gain.connect(audioContext.destination);
 
     oscillator.start();
-    oscillator.stop(audioContext.currentTime + 0.08);
+
+    oscillator.stop(
+        audioContext.currentTime + 0.08
+    );
+
 }
 
 
-// -------------------------
-// Start button
-// -------------------------
-
-startButton.addEventListener("click", function () {
-
-    // Allow browser audio
-    audioContext = new (
-        window.AudioContext ||
-        window.webkitAudioContext
-    )();
-
-    audioContext.resume();
-
-    // Hide intro
-   intro.classList.add("hidden");
-
-// Show countdown
-countdownSection.classList.remove("hidden");
-
-    // Start countdown
-    updateCountdown();
-
-    setInterval(updateCountdown, 1000);
-});
-
-
-// -------------------------
-// Countdown
-// -------------------------
+// ==========================================
+// START COUNTDOWN
+// ==========================================
 
 function updateCountdown() {
 
@@ -81,7 +97,7 @@ function updateCountdown() {
     const difference = birthday - now;
 
 
-    // Birthday has arrived
+    // Birthday reached
     if (difference <= 0) {
 
         daysElement.textContent = "00";
@@ -89,24 +105,15 @@ function updateCountdown() {
         minutesElement.textContent = "00";
         secondsElement.textContent = "00";
 
-        // Stop ticking
-        if (audioContext) {
-            audioContext.close();
-        }
-
-        // Small delay before showing birthday message
-        setTimeout(() => {
-
-            countdownSection.classList.add("hidden");
-            birthdayMessage.classList.remove("hidden");
-
-        }, 1000);
+        clearInterval(countdownTimer);
 
         return;
+
     }
 
 
-    // Calculate time
+    // Calculate time remaining
+
     const days = Math.floor(
         difference / (1000 * 60 * 60 * 24)
     );
@@ -124,8 +131,10 @@ function updateCountdown() {
     );
 
 
-    // Display
-    daysElement.textContent = String(days).padStart(2, "0");
+    // Display countdown
+
+    daysElement.textContent =
+        String(days).padStart(2, "0");
 
     hoursElement.textContent =
         String(hours).padStart(2, "0");
@@ -136,7 +145,30 @@ function updateCountdown() {
     secondsElement.textContent =
         String(seconds).padStart(2, "0");
 
-
-    // Tick
-    playTick();
 }
+
+
+// ==========================================
+// FIRST UPDATE
+// ==========================================
+
+updateCountdown();
+
+
+// Update every second
+
+const countdownTimer = setInterval(
+    updateCountdown,
+    1000
+);
+
+
+// ==========================================
+// START AUDIO AFTER USER INTERACTION
+// ==========================================
+
+document.addEventListener(
+    "click",
+    startAudio,
+    { once: true }
+);
