@@ -95,34 +95,39 @@ document.addEventListener("click", function () {
 // ==========================================
 // FINISH COUNTDOWN
 // ==========================================
-
 function finishCountdown() {
+    if (finished) return;
 
-    // Stop ticking
-    if (tickTimer !== null) {
+    finished = true;
+
+    if (countdownTimer) {
+        clearInterval(countdownTimer);
+        countdownTimer = null;
+    }
+
+    if (tickTimer) {
         clearInterval(tickTimer);
         tickTimer = null;
     }
 
-    // Stop audio
     if (audioContext) {
         audioContext.close();
         audioContext = null;
     }
 
-    // Hide countdown
     countdown.style.display = "none";
 
-    // Change message
-    message.innerHTML =
-        "Happy birthday Brinda....💚<br>" +
+    document.querySelector(".countdown-title").textContent =
+        "Finally, the wait is over. The day is here!";
+
+    specialDayText.innerHTML =
+        "Happy Birthday Brinda...!!!🥳💚<br>" +
         "password is 0826";
 
-    message.style.fontSize = "22px";
-    message.style.opacity = "0.85";
-    message.style.lineHeight = "1.6";
+    specialDayText.style.fontSize = "22px";
+    specialDayText.style.opacity = "0.85";
+    specialDayText.style.lineHeight = "1.6";
 }
-
 
 // ==========================================
 // UPDATE COUNTDOWN
