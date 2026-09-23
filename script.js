@@ -16,6 +16,7 @@ const unlockButton = document.getElementById("unlockButton");
 const passwordMessage = document.getElementById("passwordMessage");
 
 const backButton = document.getElementById("backButton");
+const tapMessage = document.getElementById("tapMessage");
 
 
 // ==========================================
@@ -212,8 +213,11 @@ function finishCountdown() {
         specialDayText.style.opacity = "0.85";
         specialDayText.style.lineHeight = "1.6";
     }
-}
 
+    if (tapMessage) {
+    tapMessage.style.display = "none";
+    }
+}
 
 // ==========================================
 // UPDATE COUNTDOWN
