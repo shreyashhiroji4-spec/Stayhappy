@@ -256,3 +256,8 @@ button:hover {
     opacity: 0.85;
     font-weight: 500;
 }
+#tapMessage {
+    margin-top: 25px;
+    font-size: 14px;
+    opacity: 0.55;
+}
