@@ -26,7 +26,7 @@ const tapMessage = document.getElementById("tapMessage");
 // TEST MODE
 // Change to false after everything works.
 
-const TEST_MODE = true;
+const TEST_MODE = false;
 
 const birthday = TEST_MODE
     ? Date.now() + 10000
