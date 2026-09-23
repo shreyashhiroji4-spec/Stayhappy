@@ -20,8 +20,8 @@ const seconds = document.getElementById("seconds");
 
 const countdown = document.getElementById("countdown");
 const message = document.getElementById("specialDayText");
-
 const backButton = document.getElementById("backButton");
+const countdownTitle = document.getElementById("countdownTitle");
 
 
 // ==========================================
