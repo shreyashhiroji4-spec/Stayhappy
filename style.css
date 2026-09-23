@@ -236,3 +236,11 @@ button:hover {
     font-size: 14px;
     opacity: 0.8;
 }
+/* FINAL COUNTDOWN TEXT FIX */
+
+.bottom-text {
+    margin-top: 45px !important;
+    margin-bottom: 45px !important;
+    font-size: 15px !important;
+    opacity: 0.5;
+}
