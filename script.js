@@ -176,3 +176,38 @@ if (
     );
 
 }
+// ==========================================
+// PASSWORD
+// ==========================================
+
+const passwordInput = document.getElementById("passwordInput");
+const unlockButton = document.getElementById("unlockButton");
+const passwordMessage = document.getElementById("passwordMessage");
+
+if (passwordInput && unlockButton) {
+
+    unlockButton.addEventListener("click", function () {
+
+        const password = passwordInput.value;
+
+        // CHANGE THIS PASSWORD
+        const correctPassword = "1234";
+
+        if (password === correctPassword) {
+
+            passwordMessage.textContent = "Unlocked! 💚";
+
+            // Next page
+            window.location.href = "birthday.html";
+
+        } else {
+
+            passwordMessage.textContent =
+                "Wrong password... 👀 Try again.";
+
+            passwordInput.value = "";
+        }
+
+    });
+
+}
