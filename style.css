@@ -209,3 +209,30 @@ button:hover {
     }
 
 }
+/* PASSWORD */
+
+.password-section {
+    margin-top: 25px;
+}
+
+#passwordInput {
+    width: 220px;
+    padding: 13px 18px;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+    font-size: 15px;
+    text-align: center;
+    margin-right: 8px;
+}
+
+#unlockButton {
+    padding: 13px 20px;
+    font-size: 14px;
+}
+
+#passwordMessage {
+    margin-top: 12px;
+    font-size: 14px;
+    opacity: 0.8;
+}
