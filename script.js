@@ -3,7 +3,7 @@
 // 8 October 2026 - 12:00 AM IST
 // ==========================================
 
-const birthday = new Date("2026-10-08T00:00:00+05:30").getTime();
+const birthday = new Date(Date.now() + 10000).getTime();
 
 
 // ==========================================
