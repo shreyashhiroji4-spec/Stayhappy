@@ -261,3 +261,7 @@ button:hover {
     font-size: 14px;
     opacity: 0.55;
 }
+#specialDayText div {
+    display: block !important;
+    margin-bottom: 4px;
+}
