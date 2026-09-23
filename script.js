@@ -1,26 +1,11 @@
 // ==========================================
 // BIRTHDAY COUNTDOWN
-// 8 October 2026 - 12:00 AM IST
 // ==========================================
 
 const birthday = new Date(Date.now() + 10000).getTime();
 
-
 // ==========================================
-// BACK BUTTON
-// ==========================================
-
-const backButton = document.getElementById("backButton");
-
-if (backButton) {
-    backButton.addEventListener("click", function () {
-        window.location.href = "index.html";
-    });
-}
-
-
-// ==========================================
-// COUNTDOWN
+// ELEMENTS
 // ==========================================
 
 const daysElement = document.getElementById("days");
@@ -28,77 +13,47 @@ const hoursElement = document.getElementById("hours");
 const minutesElement = document.getElementById("minutes");
 const secondsElement = document.getElementById("seconds");
 
+const specialDayText =
+    document.getElementById("specialDayText");
 
-// Only run if countdown elements exist
-if (
-    daysElement &&
-    hoursElement &&
-    minutesElement &&
-    secondsElement
-) {
+const countdown =
+    document.getElementById("countdown");
 
-    function updateCountdown() {
+const backButton =
+    document.getElementById("backButton");
 
-        const now = new Date().getTime();
+const passwordInput =
+    document.getElementById("passwordInput");
 
-        const difference = birthday - now;
+const unlockButton =
+    document.getElementById("unlockButton");
+
+const passwordMessage =
+    document.getElementById("passwordMessage");
 
 
-        // Birthday reached
-       if (difference <= 0) {
+// ==========================================
+// BACK BUTTON
+// ==========================================
 
-    daysElement.textContent = "00";
-    hoursElement.textContent = "00";
-    minutesElement.textContent = "00";
-    secondsElement.textContent = "00";
+if (backButton) {
 
-    document.getElementById("specialDayText").innerHTML =
-        "Happy birthday Brinda....💚<br>password is 0826";
+    backButton.addEventListener(
+        "click",
+        function () {
 
-    return;
+            window.location.href =
+                "index.html";
+
+        }
+    );
+
 }
 
 
-        const days = Math.floor(
-            difference / (1000 * 60 * 60 * 24)
-        );
-
-        const hours = Math.floor(
-            (difference / (1000 * 60 * 60)) % 24
-        );
-
-        const minutes = Math.floor(
-            (difference / (1000 * 60)) % 60
-        );
-
-        const seconds = Math.floor(
-            (difference / 1000) % 60
-        );
-
-
-        daysElement.textContent =
-            String(days).padStart(2, "0");
-
-        hoursElement.textContent =
-            String(hours).padStart(2, "0");
-
-        minutesElement.textContent =
-            String(minutes).padStart(2, "0");
-
-        secondsElement.textContent =
-            String(seconds).padStart(2, "0");
-    }
-
-
-    // Start countdown
-    updateCountdown();
-
-    setInterval(updateCountdown, 1000);
-
-
-  // ======================================
+// ==========================================
 // TICKING SOUND
-// ======================================
+// ==========================================
 
 let audioContext = null;
 let tickTimer = null;
@@ -116,14 +71,13 @@ function startAudio() {
     }
 
     if (audioContext.state === "suspended") {
+
         audioContext.resume();
+
     }
+
 }
 
-
-// ======================================
-// PLAY TICK
-// ======================================
 
 function playTick() {
 
@@ -167,12 +121,13 @@ function playTick() {
     oscillator.stop(
         audioContext.currentTime + 0.08
     );
+
 }
 
 
-// ======================================
-// FIRST CLICK ACTIVATES SOUND
-// ======================================
+// ==========================================
+// START SOUND AFTER FIRST CLICK
+// ==========================================
 
 document.addEventListener(
     "click",
@@ -182,7 +137,6 @@ document.addEventListener(
 
         playTick();
 
-        // Tick every second
         tickTimer = setInterval(
             playTick,
             1000
@@ -191,38 +145,180 @@ document.addEventListener(
     },
     { once: true }
 );
+
+
+// ==========================================
+// COUNTDOWN
+// ==========================================
+
+function updateCountdown() {
+
+    const now =
+        new Date().getTime();
+
+    const difference =
+        birthday - now;
+
+
+    // ======================================
+    // COUNTDOWN FINISHED
+    // ======================================
+
+    if (difference <= 0) {
+
+        daysElement.textContent = "00";
+        hoursElement.textContent = "00";
+        minutesElement.textContent = "00";
+        secondsElement.textContent = "00";
+
+
+        // Stop ticking
+        if (tickTimer) {
+
+            clearInterval(tickTimer);
+
+            tickTimer = null;
+
+        }
+
+
+        // Stop audio
+        if (audioContext) {
+
+            audioContext.close();
+
+            audioContext = null;
+
+        }
+
+
+        // Hide countdown boxes
+        if (countdown) {
+
+            countdown.style.display =
+                "none";
+
+        }
+
+
+        // Change message
+        if (specialDayText) {
+
+            specialDayText.innerHTML =
+                "Happy birthday Brinda....💚<br>" +
+                "password is 0826";
+
+        }
+
+
+        clearInterval(
+            countdownTimer
+        );
+
+        return;
+    }
+
+
+    // ======================================
+    // CALCULATE TIME
+    // ======================================
+
+    const days =
+        Math.floor(
+            difference /
+            (1000 * 60 * 60 * 24)
+        );
+
+
+    const hours =
+        Math.floor(
+            (difference /
+            (1000 * 60 * 60)) % 24
+        );
+
+
+    const minutes =
+        Math.floor(
+            (difference /
+            (1000 * 60)) % 60
+        );
+
+
+    const seconds =
+        Math.floor(
+            (difference /
+            1000) % 60
+        );
+
+
+    // ======================================
+    // DISPLAY TIME
+    // ======================================
+
+    daysElement.textContent =
+        String(days).padStart(2, "0");
+
+    hoursElement.textContent =
+        String(hours).padStart(2, "0");
+
+    minutesElement.textContent =
+        String(minutes).padStart(2, "0");
+
+    secondsElement.textContent =
+        String(seconds).padStart(2, "0");
+
+}
+
+
+// ==========================================
+// START COUNTDOWN
+// ==========================================
+
+updateCountdown();
+
+const countdownTimer =
+    setInterval(
+        updateCountdown,
+        1000
+    );
+
+
 // ==========================================
 // PASSWORD
 // ==========================================
 
-const passwordInput = document.getElementById("passwordInput");
-const unlockButton = document.getElementById("unlockButton");
-const passwordMessage = document.getElementById("passwordMessage");
+if (unlockButton) {
 
-if (passwordInput && unlockButton) {
+    unlockButton.addEventListener(
+        "click",
+        function () {
 
-    unlockButton.addEventListener("click", function () {
+            const password =
+                passwordInput.value;
 
-        const password = passwordInput.value;
 
-        // CHANGE THIS PASSWORD
-        const correctPassword = "1234";
+            const correctPassword =
+                "0826";
 
-        if (password === correctPassword) {
 
-            passwordMessage.textContent = "Unlocked! 💚";
+            if (password === correctPassword) {
 
-            // Next page
-            window.location.href = "birthday.html";
+                passwordMessage.textContent =
+                    "Unlocked! 💚";
 
-        } else {
+                // We'll create the next page later.
+                // window.location.href = "birthday.html";
 
-            passwordMessage.textContent =
-                "Wrong password... 👀 Try again.";
+            } else {
 
-            passwordInput.value = "";
+                passwordMessage.textContent =
+                    "Wrong password... 👀";
+
+                passwordInput.value = "";
+
+            }
+
         }
-
-    });
+    );
 
 }
