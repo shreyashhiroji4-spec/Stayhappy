@@ -214,9 +214,11 @@ function finishCountdown() {
         specialDayText.style.lineHeight = "1.6";
     }
 
-    if (tapMessage) {
-    tapMessage.style.display = "none";
-    }
+    const tapMessageElement = document.getElementById("tapMessage");
+
+if (tapMessageElement) {
+    tapMessageElement.remove();
+}
 }
 
 // ==========================================
