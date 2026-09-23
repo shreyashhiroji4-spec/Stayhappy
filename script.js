@@ -198,7 +198,7 @@ function finishCountdown() {
     if (countdownTitle) {
 
         countdownTitle.textContent =
-            "Finally, the wait is over. The day is here! 💚";
+            "Finally, the wait is over. The day is here...💚";
     }
 
 
@@ -206,8 +206,9 @@ function finishCountdown() {
     if (specialDayText) {
 
         specialDayText.innerHTML =
-            "Happy Birthday Brinda...!!!🥳💚<br>" +
-            "password is 0826";
+            "Happy Birthday Brinda...!!!🥳<br>" +
+            "password is 0826" + 
+            "I hope you will enjoy...💚";
 
         specialDayText.style.fontSize = "22px";
         specialDayText.style.opacity = "0.85";
