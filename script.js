@@ -45,15 +45,18 @@ if (
 
 
         // Birthday reached
-        if (difference <= 0) {
+       if (difference <= 0) {
 
-            daysElement.textContent = "00";
-            hoursElement.textContent = "00";
-            minutesElement.textContent = "00";
-            secondsElement.textContent = "00";
+    daysElement.textContent = "00";
+    hoursElement.textContent = "00";
+    minutesElement.textContent = "00";
+    secondsElement.textContent = "00";
 
-            return;
-        }
+    document.getElementById("specialDayText").innerHTML =
+        "Happy birthday Brinda....💚<br>password is 0826";
+
+    return;
+}
 
 
         const days = Math.floor(
