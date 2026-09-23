@@ -244,3 +244,10 @@ button:hover {
     opacity: 0.85;
     font-weight: 500;
 }
+/* Move everything slightly upward on phones */
+@media (max-width: 600px) {
+    .container {
+        position: relative;
+        top: -60px;
+    }
+}
