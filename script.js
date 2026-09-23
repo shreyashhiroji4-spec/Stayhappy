@@ -117,8 +117,8 @@ function finishCountdown() {
 
     countdown.style.display = "none";
 
-    document.querySelector(".countdown-title").textContent =
-        "Finally, the wait is over. The day is here!";
+    countdownTitle.textContent =
+        "Finally, the wait is over. The day is here! 💚";
 
     specialDayText.innerHTML =
         "Happy Birthday Brinda...!!!🥳💚<br>" +
@@ -128,7 +128,6 @@ function finishCountdown() {
     specialDayText.style.opacity = "0.85";
     specialDayText.style.lineHeight = "1.6";
 }
-
 // ==========================================
 // UPDATE COUNTDOWN
 // ==========================================
