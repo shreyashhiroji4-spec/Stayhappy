@@ -169,22 +169,29 @@ button:hover {
 @media (max-width: 600px) {
 
     .container {
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
         position: relative;
         top: 40px;
     }
 
     #intro {
         transform: none;
+        width: 100%;
+        text-align: center;
     }
 
     .intro-text {
         font-size: 24px;
         letter-spacing: 1px;
         margin-bottom: 20px;
+        text-align: center;
     }
 
     #countdown {
         gap: 5px;
+        justify-content: center;
     }
 
     .time-box {
@@ -207,6 +214,7 @@ button:hover {
     .countdown-title {
         font-size: 20px;
         margin-bottom: 30px;
+        text-align: center;
     }
 }
 /* =========================
