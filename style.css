@@ -177,11 +177,11 @@ button:hover {
 
     .container {
         position: relative;
-        top: -50px;
+        top: 40px;
     }
 
     #intro {
-        transform: translateY(-100px);
+        transform: none;
     }
 
     .intro-text {
@@ -216,8 +216,6 @@ button:hover {
         margin-bottom: 30px;
     }
 }
-
-
 /* =========================
    PASSWORD
    ========================= */
