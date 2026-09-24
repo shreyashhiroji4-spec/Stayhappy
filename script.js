@@ -332,34 +332,33 @@ const starsCanvas = document.getElementById("starsCanvas");
 
 if (starsCanvas) {
 
-    const starCtx = starsCanvas.getContext("2d");
+    const ctx = starsCanvas.getContext("2d");
 
     let stars = [];
 
-    function resizeStarsCanvas() {
+    function createStars() {
+
         starsCanvas.width = window.innerWidth;
         starsCanvas.height = window.innerHeight;
 
         stars = [];
 
-        const starCount = Math.floor(
-            (window.innerWidth * window.innerHeight) / 7000
-        );
+        for (let i = 0; i < 100; i++) {
 
-        for (let i = 0; i < starCount; i++) {
             stars.push({
                 x: Math.random() * starsCanvas.width,
                 y: Math.random() * starsCanvas.height,
-                size: Math.random() * 2 + 0.5,
-                opacity: Math.random() * 0.7 + 0.3,
-                twinkle: Math.random() * 0.02 + 0.005
+                size: Math.random() * 1.5 + 0.5,
+                opacity: Math.random() * 0.8 + 0.2,
+                speed: Math.random() * 0.01 + 0.005
             });
+
         }
     }
 
     function drawStars() {
 
-        starCtx.clearRect(
+        ctx.clearRect(
             0,
             0,
             starsCanvas.width,
@@ -368,15 +367,15 @@ if (starsCanvas) {
 
         stars.forEach(star => {
 
-            star.opacity += star.twinkle;
+            star.opacity += star.speed;
 
             if (star.opacity >= 1 || star.opacity <= 0.2) {
-                star.twinkle *= -1;
+                star.speed *= -1;
             }
 
-            starCtx.beginPath();
+            ctx.beginPath();
 
-            starCtx.arc(
+            ctx.arc(
                 star.x,
                 star.y,
                 star.size,
@@ -384,17 +383,17 @@ if (starsCanvas) {
                 Math.PI * 2
             );
 
-            starCtx.fillStyle =
+            ctx.fillStyle =
                 `rgba(255, 255, 255, ${star.opacity})`;
 
-            starCtx.fill();
+            ctx.fill();
         });
 
         requestAnimationFrame(drawStars);
     }
 
-    resizeStarsCanvas();
+    createStars();
     drawStars();
 
-    window.addEventListener("resize", resizeStarsCanvas);
+    window.addEventListener("resize", createStars);
 }
