@@ -324,3 +324,77 @@ if (unlockButton) {
         }
     );
 }
+// =========================
+// RANDOM STARS
+// =========================
+
+const starsCanvas = document.getElementById("starsCanvas");
+
+if (starsCanvas) {
+
+    const starCtx = starsCanvas.getContext("2d");
+
+    let stars = [];
+
+    function resizeStarsCanvas() {
+        starsCanvas.width = window.innerWidth;
+        starsCanvas.height = window.innerHeight;
+
+        stars = [];
+
+        const starCount = Math.floor(
+            (window.innerWidth * window.innerHeight) / 7000
+        );
+
+        for (let i = 0; i < starCount; i++) {
+            stars.push({
+                x: Math.random() * starsCanvas.width,
+                y: Math.random() * starsCanvas.height,
+                size: Math.random() * 2 + 0.5,
+                opacity: Math.random() * 0.7 + 0.3,
+                twinkle: Math.random() * 0.02 + 0.005
+            });
+        }
+    }
+
+    function drawStars() {
+
+        starCtx.clearRect(
+            0,
+            0,
+            starsCanvas.width,
+            starsCanvas.height
+        );
+
+        stars.forEach(star => {
+
+            star.opacity += star.twinkle;
+
+            if (star.opacity >= 1 || star.opacity <= 0.2) {
+                star.twinkle *= -1;
+            }
+
+            starCtx.beginPath();
+
+            starCtx.arc(
+                star.x,
+                star.y,
+                star.size,
+                0,
+                Math.PI * 2
+            );
+
+            starCtx.fillStyle =
+                `rgba(255, 255, 255, ${star.opacity})`;
+
+            starCtx.fill();
+        });
+
+        requestAnimationFrame(drawStars);
+    }
+
+    resizeStarsCanvas();
+    drawStars();
+
+    window.addEventListener("resize", resizeStarsCanvas);
+}
