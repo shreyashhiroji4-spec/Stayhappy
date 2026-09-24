@@ -21,6 +21,7 @@ body {
     width: 100%;
     margin: 0 auto;
     text-align: center;
+    transform: translateY(40px);
 }
 
 
