@@ -15,6 +15,41 @@ body {
     align-items: center;
 
     overflow: hidden;
+
+    position: relative;
+}
+
+
+/* =========================
+   STAR BACKGROUND
+   ========================= */
+
+#starsCanvas {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+   ========================= */
+
+.container {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0 auto;
+
+    text-align: center;
+
+    box-sizing: border-box;
 }
 
 
@@ -55,9 +90,11 @@ button {
 button:hover {
     transform: scale(1.05);
 }
+
 #backButton {
     transform: translateY(-7px);
 }
+
 
 /* =========================
    COUNTDOWN
@@ -114,6 +151,7 @@ button:hover {
 .bottom-text {
     margin-top: 45px;
     margin-bottom: 30px;
+
     font-size: 15px;
     opacity: 0.5;
 }
@@ -163,6 +201,75 @@ button:hover {
 
 
 /* =========================
+   PASSWORD
+   ========================= */
+
+.password-section {
+    margin-top: 25px;
+}
+
+#passwordInput {
+    width: 220px;
+    padding: 13px 18px;
+
+    border: none;
+    border-radius: 25px;
+
+    outline: none;
+
+    font-size: 15px;
+    text-align: center;
+
+    margin-right: 8px;
+}
+
+#unlockButton {
+    padding: 13px 20px;
+    font-size: 14px;
+}
+
+#passwordMessage {
+    margin-top: 12px;
+
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+
+/* =========================
+   SPECIAL DAY MESSAGE
+   ========================= */
+
+#specialDayText {
+    margin-top: 45px;
+    margin-bottom: 35px;
+
+    font-size: 22px !important;
+    line-height: 1.6;
+
+    opacity: 0.85;
+    font-weight: 500;
+}
+
+#specialDayText div {
+    display: block !important;
+    margin-bottom: 2px;
+}
+
+
+/* =========================
+   TAP MESSAGE
+   ========================= */
+
+#tapMessage {
+    margin-top: 25px;
+
+    font-size: 14px;
+    opacity: 0.55;
+}
+
+
+/* =========================
    MOBILE
    ========================= */
 
@@ -170,28 +277,39 @@ button:hover {
 
     .container {
         width: 100%;
+        max-width: 100%;
+
         margin: 0 auto;
+
         text-align: center;
+
         position: relative;
         top: 40px;
     }
 
     #intro {
-        transform: none;
         width: 100%;
         text-align: center;
+
+        transform: none;
     }
 
     .intro-text {
         font-size: 24px;
         letter-spacing: 1px;
+
         margin-bottom: 20px;
+
         text-align: center;
     }
 
     #countdown {
         gap: 5px;
+
         justify-content: center;
+        align-items: center;
+
+        width: 100%;
     }
 
     .time-box {
@@ -213,81 +331,9 @@ button:hover {
 
     .countdown-title {
         font-size: 20px;
+
         margin-bottom: 30px;
+
         text-align: center;
     }
-}
-/* =========================
-   PASSWORD
-   ========================= */
-
-.password-section {
-    margin-top: 25px;
-}
-
-#passwordInput {
-    width: 220px;
-    padding: 13px 18px;
-    border: none;
-    border-radius: 25px;
-    outline: none;
-    font-size: 15px;
-    text-align: center;
-    margin-right: 8px;
-}
-
-#unlockButton {
-    padding: 13px 20px;
-    font-size: 14px;
-}
-
-#passwordMessage {
-    margin-top: 12px;
-    font-size: 14px;
-    opacity: 0.8;
-}
-
-
-#specialDayText {
-    margin-top: 45px;
-    margin-bottom: 35px;
-    font-size: 22px !important;
-    line-height: 1.6;
-    opacity: 0.85;
-    font-weight: 500;
-}
-#tapMessage {
-    margin-top: 25px;
-    font-size: 14px;
-    opacity: 0.55;
-}
-#specialDayText div {
-    display: block !important;
-    margin-bottom: 2px;
-}
-/* =========================
-   STAR BACKGROUND
-   ========================= */
-
-#starsCanvas {
-    position: fixed;
-    inset: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 0;
-    pointer-events: none;
-}
-
-body {
-    position: relative;
-    min-height: 100vh;
-}
-
-.container {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-    box-sizing: border-box;
 }
