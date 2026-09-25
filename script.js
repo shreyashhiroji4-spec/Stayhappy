@@ -303,22 +303,25 @@ if (unlockButton) {
         "click",
         function () {
 
-            const password =
-                passwordInput.value;
+            const password = passwordInput.value;
 
             if (password === correctPassword) {
 
-    passwordMessage.textContent = "Unlocked! 💚";
+                passwordMessage.textContent = "Unlocked! 💚";
 
-    setTimeout(function () {
-        window.location.href = "birthday.html";
-    }, 500);
+                setTimeout(function () {
+                    window.location.href = "birthday.html";
+                }, 500);
 
-} else {
+            } else {
 
-    passwordMessage.textContent = "Wrong password... 👀";
-    passwordInput.value = "";
+                passwordMessage.textContent =
+                    "Wrong password My lady...😏";
 
+                passwordInput.value = "";
+            }
+        }
+    );
 }
                 // Later:
                 // window.location.href = "birthday.html";
