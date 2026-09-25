@@ -306,11 +306,20 @@ if (unlockButton) {
             const password =
                 passwordInput.value;
 
-            if (password === "08s26") {
+            if (password === correctPassword) {
 
-                passwordMessage.textContent =
-                    "Unlocked! 💚";
+    passwordMessage.textContent = "Unlocked! 💚";
 
+    setTimeout(function () {
+        window.location.href = "birthday.html";
+    }, 500);
+
+} else {
+
+    passwordMessage.textContent = "Wrong password... 👀";
+    passwordInput.value = "";
+
+}
                 // Later:
                 // window.location.href = "birthday.html";
 
