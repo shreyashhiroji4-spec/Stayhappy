@@ -111,6 +111,10 @@ function playTick() {
 // ==========================================
 
 document.addEventListener("click", function() {
+
+    // Sound only works on the countdown page
+    if (!countdown) return;
+
     if (finished) return;
 
     playTick();
@@ -120,6 +124,7 @@ document.addEventListener("click", function() {
             if (!finished) playTick();
         }, 1000);
     }
+
 }, {once:true});
 // ==========================================
 // STOP SOUND COMPLETELY
