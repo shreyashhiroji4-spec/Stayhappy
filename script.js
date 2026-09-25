@@ -299,29 +299,28 @@ finishTimer = setTimeout(
 
 if (unlockButton) {
 
-    unlockButton.addEventListener(
-        "click",
-        function () {
+    unlockButton.addEventListener("click", function () {
 
-            const password = passwordInput.value;
+        const password = passwordInput.value;
 
-            if (password === correctPassword) {
+        if (password === correctPassword) {
 
-                passwordMessage.textContent = "Unlocked! 💚";
+            passwordMessage.textContent = "Unlocked! 💚";
 
-                setTimeout(function () {
-                    window.location.href = "birthday.html";
-                }, 500);
+            setTimeout(function () {
+                window.location.href = "./birthday.html";
+            }, 500);
 
-            } else {
+        } else {
 
-                passwordMessage.textContent =
-                    "Wrong password My lady...😏";
+            passwordMessage.textContent =
+                "Wrong password My lady...😏";
 
-                passwordInput.value = "08s26";
-            }
+            passwordInput.value = "";
         }
-    );
+
+    });
+
 }
 // =========================
 // BRIGHT RANDOM STARS ✨
