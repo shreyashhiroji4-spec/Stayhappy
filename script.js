@@ -198,7 +198,7 @@ function finishCountdown() {
     if (countdownTitle) {
 
         countdownTitle.textContent =
-            "Finally, the wait is over. The day is here...😙";
+            "Finally, the wait is over. The day is here...🥳";
     }
 
 
@@ -206,9 +206,9 @@ function finishCountdown() {
     if (specialDayText) {
 
         specialDayText.innerHTML =
-    "<div>Happy Birthday Brinda...!!!🥳💚</div>" +
+    "<div>Happy Birthday Brinda...!!!💚</div>" +
     "<div>password is 0826</div>" +
-    "<div>I hope you will enjoy...💚</div>";
+    "<div>I hope you will enjoy</div>";
         
         specialDayText.style.fontSize = "22px";
         specialDayText.style.opacity = "0.85";
@@ -317,7 +317,7 @@ if (unlockButton) {
             } else {
 
                 passwordMessage.textContent =
-                    "Wrong password... 👀";
+                    "Wrong password My lady...😏";
 
                 passwordInput.value = "";
             }
