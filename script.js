@@ -207,7 +207,7 @@ function finishCountdown() {
 
         specialDayText.innerHTML =
     "<div>Happy Birthday Brinda...!!!💚</div>" +
-    "<div>password is 0826</div>" +
+    "<div>password is 08s26</div>" +
     "<div>I hope you will enjoy</div>";
         
         specialDayText.style.fontSize = "22px";
@@ -306,7 +306,7 @@ if (unlockButton) {
             const password =
                 passwordInput.value;
 
-            if (password === "0826") {
+            if (password === "08s26") {
 
                 passwordMessage.textContent =
                     "Unlocked! 💚";
