@@ -299,11 +299,11 @@ finishTimer = setTimeout(
 // PASSWORD
 // ==========================================
 
-if (unlockButton) {
+if (unlockButton && passwordInput && passwordMessage) {
 
     unlockButton.addEventListener("click", function () {
 
-        const password = passwordInput.value;
+        const password = passwordInput.value.trim();
 
         if (password === correctPassword) {
 
@@ -318,11 +318,9 @@ if (unlockButton) {
             passwordMessage.textContent =
                 "Wrong password My lady...😏";
 
-            passwordInput.value = "08s26";
+            passwordInput.value = "";
         }
-
     });
-
 }
 // =========================
 // BRIGHT RANDOM STARS ✨
