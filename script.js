@@ -107,25 +107,30 @@ function playTick() {
 
 
 // ==========================================
-// START SOUND AFTER FIRST CLICK
+// START SOUND — COUNTDOWN PAGE ONLY
 // ==========================================
 
-document.addEventListener("click", function() {
+if (countdown) {
 
-    // Sound only works on the countdown page
-    if (!countdown) return;
+    document.addEventListener("click", function() {
 
-    if (finished) return;
+        if (finished) return;
 
-    playTick();
+        playTick();
 
-    if (!tickTimer) {
-        tickTimer = setInterval(function() {
-            if (!finished) playTick();
-        }, 1000);
-    }
+        if (!tickTimer) {
+            tickTimer = setInterval(function() {
 
-}, {once:true});
+                if (!finished) {
+                    playTick();
+                }
+
+            }, 1000);
+        }
+
+    }, { once: true });
+
+}
 // ==========================================
 // STOP SOUND COMPLETELY
 // ==========================================
