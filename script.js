@@ -14,6 +14,8 @@ const specialDayText = document.getElementById("specialDayText");
 const passwordInput = document.getElementById("passwordInput");
 const unlockButton = document.getElementById("unlockButton");
 const passwordMessage = document.getElementById("passwordMessage");
+const correctPassword = "08s26";
+
 
 const backButton = document.getElementById("backButton");
 const tapMessage = document.getElementById("tapMessage");
