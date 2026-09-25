@@ -323,19 +323,6 @@ if (unlockButton) {
         }
     );
 }
-                // Later:
-                // window.location.href = "birthday.html";
-
-            } else {
-
-                passwordMessage.textContent =
-                    "Wrong password My lady...😏";
-
-                passwordInput.value = "";
-            }
-        }
-    );
-}
 // =========================
 // BRIGHT RANDOM STARS ✨
 // =========================
