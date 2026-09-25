@@ -308,7 +308,7 @@ if (unlockButton) {
             passwordMessage.textContent = "Unlocked! 💚";
 
             setTimeout(function () {
-                window.location.href = "./birthday.html";
+                window.location.href = "birthday.html";
             }, 500);
 
         } else {
