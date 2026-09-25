@@ -325,7 +325,7 @@ if (unlockButton) {
     );
 }
 // =========================
-// RANDOM STARS
+// BRIGHT RANDOM STARS ✨
 // =========================
 
 const starsCanvas = document.getElementById("starsCanvas");
@@ -348,9 +348,15 @@ if (starsCanvas) {
             stars.push({
                 x: Math.random() * starsCanvas.width,
                 y: Math.random() * starsCanvas.height,
-                size: Math.random() * 1.5 + 0.5,
-                opacity: Math.random() * 0.8 + 0.2,
-                speed: Math.random() * 0.01 + 0.005
+
+                // Slightly bigger stars
+                size: Math.random() * 1.8 + 0.7,
+
+                // Brighter stars
+                opacity: Math.random() * 0.5 + 0.5,
+
+                // Gentle twinkling
+                speed: Math.random() * 0.008 + 0.004
             });
 
         }
@@ -369,9 +375,19 @@ if (starsCanvas) {
 
             star.opacity += star.speed;
 
-            if (star.opacity >= 1 || star.opacity <= 0.2) {
+            if (star.opacity >= 1) {
+                star.opacity = 1;
                 star.speed *= -1;
             }
+
+            if (star.opacity <= 0.5) {
+                star.opacity = 0.5;
+                star.speed *= -1;
+            }
+
+            // ✨ Soft glow
+            ctx.shadowBlur = 8;
+            ctx.shadowColor = "white";
 
             ctx.beginPath();
 
@@ -387,6 +403,9 @@ if (starsCanvas) {
                 `rgba(255, 255, 255, ${star.opacity})`;
 
             ctx.fill();
+
+            // Reset shadow
+            ctx.shadowBlur = 0;
         });
 
         requestAnimationFrame(drawStars);
