@@ -110,30 +110,17 @@ function playTick() {
 // START SOUND AFTER FIRST CLICK
 // ==========================================
 
-document.addEventListener(
-    "click",
-    function () {
+document.addEventListener("click", function() {
+    if (finished) return;
 
-        if (finished) return;
+    playTick();
 
-        playTick();
-
-        if (!tickTimer) {
-
-            tickTimer = setInterval(function () {
-
-                if (!finished) {
-                    playTick();
-                }
-
-            }, 1000);
-        }
-
-    },
-    { once: true }
-);
-
-
+    if (!tickTimer) {
+        tickTimer = setInterval(function() {
+            if (!finished) playTick();
+        }, 1000);
+    }
+}, {once:true});
 // ==========================================
 // STOP SOUND COMPLETELY
 // ==========================================
@@ -141,23 +128,18 @@ document.addEventListener(
 function stopSound() {
 
     if (tickTimer !== null) {
-
         clearInterval(tickTimer);
         tickTimer = null;
     }
 
     if (audioContext) {
-
         try {
             audioContext.close();
-        } catch (error) {
-            console.log("Audio close error:", error);
-        }
+        } catch (error) {}
 
         audioContext = null;
     }
 }
-
 
 // ==========================================
 // FINISH COUNTDOWN
