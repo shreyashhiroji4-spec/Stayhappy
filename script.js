@@ -318,7 +318,7 @@ if (unlockButton) {
                 passwordMessage.textContent =
                     "Wrong password My lady...😏";
 
-                passwordInput.value = "";
+                passwordInput.value = "08s26";
             }
         }
     );
