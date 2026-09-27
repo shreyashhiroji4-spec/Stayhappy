@@ -190,7 +190,22 @@ function finishCountdown() {
 
     stopSound();
 
+    // ==========================================
+    // COUNTDOWN END ANIMATION
+    // ==========================================
 
+    if (countdown) {
+
+        countdown.classList.add("countdown-ending");
+
+        setTimeout(function() {
+
+            countdown.style.display = "none";
+
+        }, 1000);
+    }
+
+    document.body.classList.add("birthday-glow");
   
 
 
