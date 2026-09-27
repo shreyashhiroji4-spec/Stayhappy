@@ -162,7 +162,10 @@ function finishCountdown() {
     finished = true;
 
 
-    // Stop countdown
+    // ==========================================
+    // STOP COUNTDOWN
+    // ==========================================
+
     if (countdownTimer !== null) {
 
         clearInterval(countdownTimer);
@@ -170,7 +173,10 @@ function finishCountdown() {
     }
 
 
-    // Stop finish timer
+    // ==========================================
+    // STOP FINISH TIMER
+    // ==========================================
+
     if (finishTimer !== null) {
 
         clearTimeout(finishTimer);
@@ -178,54 +184,75 @@ function finishCountdown() {
     }
 
 
+    // ==========================================
     // STOP SOUND
+    // ==========================================
+
     stopSound();
 
 
-// ==========================================
-// COUNTDOWN END ANIMATION
-// ==========================================
+    // ==========================================
+    // COUNTDOWN END ANIMATION
+    // ==========================================
 
-if (countdown) {
+    if (countdown) {
 
-    countdown.classList.add("countdown-ending");
+        countdown.classList.add("countdown-ending");
 
-    setTimeout(function() {
-        countdown.style.display = "none";
-    }, 1000);
-}
+        setTimeout(function() {
 
-document.body.classList.add("birthday-glow");
+            countdown.style.display = "none";
+
+        }, 1000);
+    }
+
+    document.body.classList.add("birthday-glow");
 
 
-    // Change top message
+    // ==========================================
+    // CHANGE TOP MESSAGE
+    // ==========================================
+
     if (countdownTitle) {
 
         countdownTitle.textContent =
             "Finally, the wait is over. The day is here...🥳";
+
+        countdownTitle.classList.add("birthday-reveal");
     }
 
 
-    // Change bottom message
+    // ==========================================
+    // CHANGE BOTTOM MESSAGE
+    // ==========================================
+
     if (specialDayText) {
 
         specialDayText.innerHTML =
-    "<div>Happy Birthday Brinda...!!!💚</div>" +
-    "<div>password is 08s26</div>" +
-    "<div>I hope you will enjoy</div>";
-        
+            "<div>Happy Birthday Brinda...!!!💚</div>" +
+            "<div>password is 08s26</div>" +
+            "<div>I hope you will enjoy</div>";
+
         specialDayText.style.fontSize = "22px";
         specialDayText.style.opacity = "0.85";
         specialDayText.style.lineHeight = "1.6";
+
+        specialDayText.classList.add("birthday-reveal");
     }
 
-    const tapMessageElement = document.getElementById("tapMessage");
 
-if (tapMessageElement) {
-    tapMessageElement.remove();
-}
-}
+    // ==========================================
+    // REMOVE TAP MESSAGE
+    // ==========================================
 
+    const tapMessageElement =
+        document.getElementById("tapMessage");
+
+    if (tapMessageElement) {
+
+        tapMessageElement.remove();
+    }
+}
 // ==========================================
 // UPDATE COUNTDOWN
 // ==========================================
