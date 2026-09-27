@@ -212,31 +212,25 @@ function finishCountdown() {
     // ==========================================
     // CHANGE TOP MESSAGE
     // ==========================================
-
     if (countdownTitle) {
-
+        
         countdownTitle.textContent =
-            "Finally, the wait is over. The day is here...🥳";
-
-        countdownTitle.classList.add("birthday-reveal");
+        "Finally, the wait is over. The day is here...🥳";
     }
 
-
     // ==========================================
-    // CHANGE BOTTOM MESSAGE
+    // CHANGE BIRTHDAY MESSAGE
     // ==========================================
-
     if (specialDayText) {
-
         specialDayText.innerHTML =
-            "<div>Happy Birthday Brinda...!!!💚</div>" +
-            "<div>password is 08s26</div>" +
-            "<div>I hope you will enjoy</div>";
-
+        "<div>Happy Birthday Brinda...!!!💚</div>" +
+        "<div>password is 08s26</div>" +
+        "<div>I hope you will enjoy</div>";
+        
         specialDayText.style.fontSize = "22px";
         specialDayText.style.opacity = "0.85";
         specialDayText.style.lineHeight = "1.6";
-
+        
         specialDayText.classList.add("birthday-reveal");
     }
 
