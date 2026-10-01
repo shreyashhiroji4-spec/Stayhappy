@@ -297,27 +297,28 @@ function updateCountdown() {
 
 
 // ==========================================
-// START COUNTDOWN
+// START COUNTDOWN — COUNTDOWN PAGE ONLY
 // ==========================================
 
-updateCountdown();
+if (countdown && days && hours && minutes && seconds) {
 
-countdownTimer = setInterval(
-    updateCountdown,
-    250
-);
+    updateCountdown();
 
-
-// ==========================================
-// GUARANTEED FINISH
-// ==========================================
-
-finishTimer = setTimeout(
-    finishCountdown,
-    Math.max(0, birthday - Date.now())
-);
+    countdownTimer = setInterval(
+        updateCountdown,
+        250
+    );
 
 
+    // ==========================================
+    // GUARANTEED FINISH
+    // ==========================================
+
+    finishTimer = setTimeout(
+        finishCountdown,
+        Math.max(0, birthday - Date.now())
+    );
+}
 // ==========================================
 // PASSWORD
 // ==========================================
