@@ -445,3 +445,12 @@ button:hover {
     font-weight: bold;
     margin-top: 35px;
 }
+/* Reduce the gap after the birthday title */
+.birthday-page .surprise-title {
+    margin-bottom: 15px;
+}
+
+/* Keep the final message closer to the title */
+.final-message {
+    margin-top: 20px;
+}
