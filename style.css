@@ -454,3 +454,48 @@ button:hover {
 .final-message {
     margin-top: 20px;
 }
+/* Keep stars behind the birthday content */
+#starsCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0 !important;
+    pointer-events: none;
+}
+
+.birthday-page {
+    position: relative;
+    z-index: 1;
+    padding-top: 40px;
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+
+    .birthday-page {
+        padding: 45px 20px 50px;
+    }
+
+    .birthday-page .surprise-title {
+        font-size: 28px;
+        margin-top: 0;
+        margin-bottom: 25px;
+        line-height: 1.25;
+    }
+
+    .final-message {
+        margin-top: 15px;
+        padding: 0 5px;
+        font-size: 17px;
+        line-height: 1.7;
+    }
+
+    .final-message p {
+        margin-bottom: 24px;
+    }
+
+    .final-birthday {
+        font-size: 25px;
+        margin-top: 35px;
+    }
+}
