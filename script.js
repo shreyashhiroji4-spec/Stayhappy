@@ -365,7 +365,7 @@ if (starsCanvas) {
 
         stars = [];
 
-        for (let i = 0; i < 100; i++) {
+        for (let i = 0; i < 80; i++) {
 
             stars.push({
                 x: Math.random() * starsCanvas.width,
