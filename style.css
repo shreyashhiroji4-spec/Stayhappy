@@ -474,82 +474,16 @@ button:hover {
 @media (max-width: 600px) {
 
     .birthday-page {
-        padding: 45px 20px 50px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        padding: 65px 20px 80px;
     }
 
     .birthday-page .surprise-title {
-        font-size: 28px;
+        font-size: 26px;
+        line-height: 1.35;
         margin-top: 0;
-        margin-bottom: 25px;
-        line-height: 1.25;
-    }
-
-    .final-message {
-        margin-top: 15px;
-        padding: 0 5px;
-        font-size: 17px;
-        line-height: 1.7;
-    }
-
-    .final-message p {
-        margin-bottom: 24px;
-    }
-
-    .final-birthday {
-        font-size: 25px;
-        margin-top: 35px;
-    }
-}
-.birthday-page {
-    padding-bottom: 80px;
-}
-@media (max-width: 600px) {
-
-    .birthday-page {
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
-        padding: 35px 20px 80px;
-    }
-
-    .birthday-page .surprise-title {
-        font-size: 26px;
-        line-height: 1.35;
-        margin-bottom: 30px;
-    }
-
-    .final-message {
-        width: 100%;
-        max-width: 650px;
-        margin: 15px auto 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-size: 17px;
-        line-height: 1.65;
-    }
-
-    .final-message p {
-        margin-bottom: 25px;
-    }
-
-    .final-birthday {
-        font-size: 24px;
-        line-height: 1.4;
-        margin-top: 35px;
-    }
-}
-@media (max-width: 600px) {
-
-    .birthday-page {
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
-        padding: 35px 20px 80px;
-    }
-
-    .birthday-page .surprise-title {
-        font-size: 26px;
-        line-height: 1.35;
         margin-bottom: 30px;
     }
 
