@@ -346,6 +346,7 @@ button:hover {
     font-size: 18px;
     opacity: 0.85;
     margin-bottom: 12px;
+    margin-top: 12px;
 }
 
 #surpriseButton {
