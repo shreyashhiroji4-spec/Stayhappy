@@ -426,3 +426,22 @@ button:hover {
     opacity: 0.90;
     letter-spacing: 0.3px;
 }
+.final-message {
+    max-width: 700px;
+    margin: 80px auto 40px;
+    padding: 25px;
+    text-align: center;
+    line-height: 1.8;
+    font-size: 17px;
+    opacity: 0.9;
+}
+
+.final-message p {
+    margin-bottom: 22px;
+}
+
+.final-birthday {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 35px;
+}
