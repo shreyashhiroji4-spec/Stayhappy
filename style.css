@@ -340,13 +340,13 @@ button:hover {
     font-size: 28px;
     font-weight: bold;
     margin-bottom: 20px;
+    margin-top: 18px;
 }
 
 .surprise-text {
     font-size: 18px;
     opacity: 0.85;
     margin-bottom: 12px;
-    margin-top: 12px;
 }
 
 #surpriseButton {
